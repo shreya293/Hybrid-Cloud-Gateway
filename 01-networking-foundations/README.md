@@ -83,12 +83,12 @@ Final verification proves the integrity of the network stack, confirming that in
 *   **Transit Proof**: Successful ICMP echo requests (pings) from internal client to public DNS (`8.8.8.8`)[cite: 2].
 
 **Implementation Evidence:**
-<img src="assets/system-dashboard1.png" alt="pfSense Dashboard Status" width="600">
+<img src="assets/system dashboard1.png" alt="pfSense Dashboard Status" width="600">
 
-<img src="assets/system-dashboard2.png" alt="pfSense Dashboard Status" width="600">
+<img src="assets/system dashboard2.png" alt="pfSense Dashboard Status" width="600">
 *Figure 8: Web dashboard confirming healthy WAN and LAN interfaces[cite: 2, 3].*
 
-<img src="assets/ping-test-verified.png" alt="Connectivity Test Verification" width="600">
+<img src="assets/ping-test1.png" alt="Connectivity Test Verification" width="600">
 *Figure 9: Successful ping tests to 8.8.8.8 from the internal Windows 11 client[cite: 3].*
 
 </details>
