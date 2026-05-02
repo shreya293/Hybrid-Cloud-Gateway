@@ -67,7 +67,7 @@ Documents the service integration between pfSense and Windows Server, establishi
 <img src="assets/dns-domain-config.png" alt="DNS Domain Setup" width="600">
 *Figure 6: Domain configuration and host identification (`singh.com`)[cite: 3].*
 
-<img src="assets/dhcp-options-verified.png" alt="DHCP Option 003 Verification" width="600">
+<img src="assets/dhcp-options.png" alt="DHCP Option 003 Verification" width="600">
 *Figure 7: DHCP scope audit confirming valid gateway and DNS options[cite: 3].*
 
 </details>
