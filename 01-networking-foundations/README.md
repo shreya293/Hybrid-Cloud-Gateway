@@ -2,6 +2,18 @@
 
 This phase marks the successful establishment of the core infrastructure. The primary goal was to bridge an internal Active Directory environment with a secure pfSense gateway to allow controlled external traffic transit.
 
+## 🏗️ Virtual Network Architecture
+The environment is hosted on **VMware Workstation Pro** using custom **LAN Segments** to isolate laboratory traffic from the host machine.
+
+*   **Gateway (pfSense)**: Managed via a dual-homed configuration (WAN/LAN).
+*   **Directory Services (Windows Server 2022)**: Hosting the `singh.com` forest and enterprise DHCP/DNS.
+*   **Endpoint (Windows 11)**: A domain-joined workstation utilizing dynamic addressing.
+
+---
+
+## 🛠️ Technical Deep-Dive (Configuration receipts)
+*Click the toggles below to explore the specific configurations implemented in this phase.*
+
 <details>
 <summary><b>0. Initial Console Provisioning (Low-Level Setup)</b></summary>
 
@@ -15,20 +27,6 @@ Before accessing the Web GUI, the firewall was manually provisioned via the pfSe
 ![pfSense Console Summary](../assets/pfsense-console-main.png)
 *Figure: The pfSense console menu showing the final verified IP schema for the gateway.*
 </details>
-
----
-
-## 🏗️ Virtual Network Architecture
-The environment is hosted on **VMware Workstation Pro** using custom **LAN Segments** to isolate laboratory traffic from the host machine.
-
-*   **Gateway (pfSense)**: Managed via a dual-homed configuration (WAN/LAN).
-*   **Directory Services (Windows Server 2022)**: Hosting the `singh.com` forest and enterprise DHCP/DNS.
-*   **Endpoint (Windows 11)**: A domain-joined workstation utilizing dynamic addressing.
-
----
-
-## 🛠️ Technical Deep-Dive (Configuration receipts)
-*Click the toggles below to explore the specific configurations implemented in this phase.*
 
 <details>
 <summary><b>1. Gateway Deployment & WAN/LAN Handshake</b></summary>
