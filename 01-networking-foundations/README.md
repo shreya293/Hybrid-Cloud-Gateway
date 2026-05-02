@@ -83,7 +83,7 @@ Documents the service integration between pfSense and Windows Server, establishi
 </details>
 
 <details>
-<summary><b>Module 4: Connectivity Audit & System Audit</b></summary>
+<summary><b>Module 4: Connectivity Audit & System Audit (Server Side)</b></summary>
 
 Final verification proves the integrity of the network stack, confirming that internal assets can reach the internet while maintaining proper domain credentials[cite: 2].
 
