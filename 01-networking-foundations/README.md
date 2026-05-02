@@ -24,9 +24,11 @@ This stage focuses on selecting the correct stable build and ensuring the pfSens
 
 **Implementation Evidence:**
 <img src="assets/pfsense-version.png" alt="pfSense Version Selection" width="600">
+
 *Figure 1: Selection of the 2.8.1 stable software branch[cite: 3].*
 
 <img src="assets/vmware-detection.png" alt="VMware Hardware Detection" width="600">
+
 *Figure 2: Kernal confirmation of the VMware virtual environment[cite: 3].*
 
 </details>
@@ -85,7 +87,7 @@ Final verification proves the integrity of the network stack, confirming that in
 **Implementation Evidence:**
 <img src="assets/system dashboard1.png" alt="pfSense Dashboard Status" width="600">
 
-<img src="assets/system dashboard2.png" alt="pfSense Dashboard Status" width="600">
+<img src="assets/system-dashboard2.png" alt="pfSense Dashboard Status" width="600">
 *Figure 8: Web dashboard confirming healthy WAN and LAN interfaces[cite: 2, 3].*
 
 <img src="assets/ping-test1.png" alt="Connectivity Test Verification" width="600">
