@@ -117,16 +117,17 @@ The final validation stage proves the integrity of the hybrid-cloud foundation b
 *   **WAN Transit Proof**: Successful ICMP echo request (ping) to `8.8.8.8` with 0% packet loss, confirming the functional internet bridge.
 
 **Implementation Evidence:**
+<br>
 <img src="assets/client-ipconfig.png" alt="Windows 11 Ipconfig Audit" width="600">
 <br>
 *Figure 8: Client-side verification of correct IP assignment and Gateway discovery.*
-
+<br>
 <img src="assets/ping-test.png" alt="Successful Internet Ping" width="600">
 <br>
 *Figure 9: The 'Victory Screen'—confirmed end-to-end internet connectivity via the secure gateway.*
 
 </details>
----
+
 
 ## 💡 Engineering Resolution
 By manually architecting the **Interface Mappings** and correctly configuring the **DHCP Scope Options**, I created a collaborative environment between Directory Services and Network Security[cite: 2]. This robust foundation is now ready for **Phase 2: UTM Security Implementation**.
