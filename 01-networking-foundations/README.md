@@ -117,11 +117,11 @@ The final validation stage proves the integrity of the hybrid-cloud foundation b
 *   **WAN Transit Proof**: Successful ICMP echo request (ping) to `8.8.8.8` with 0% packet loss, confirming the functional internet bridge.
 
 **Implementation Evidence:**
-<img src="../assets/client-ipconfig.png" alt="Windows 11 Ipconfig Audit" width="600">
+<img src="assets/client-ipconfig.png" alt="Windows 11 Ipconfig Audit" width="600">
 <br>
 *Figure 8: Client-side verification of correct IP assignment and Gateway discovery.*
 
-<img src="../assets/ping-test.png" alt="Successful Internet Ping" width="600">
+<img src="assets/ping-test.png" alt="Successful Internet Ping" width="600">
 <br>
 *Figure 9: The 'Victory Screen'—confirmed end-to-end internet connectivity via the secure gateway.*
 
