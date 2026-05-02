@@ -24,9 +24,9 @@ This stage focuses on selecting the correct stable build and ensuring the pfSens
 
 **Implementation Evidence:**
 <img src="assets/pfsense-version.png" alt="pfSense Version Selection" width="600">
-
+<br>
 *Figure 1: Selection of the 2.8.1 stable software branch[cite: 3].*
-
+<br>
 <img src="assets/vmware-detection.png" alt="VMware Hardware Detection" width="600">
 
 *Figure 2: Kernal confirmation of the VMware virtual environment[cite: 3].*
@@ -45,9 +45,11 @@ Documents the low-level console provisioning where physical interfaces are manua
 
 **Implementation Evidence:**
 <img src="assets/wan-assignment.png" alt="Manual WAN Assignment" width="600">
+<br>
 *Figure 3: Mapping the untrusted virtual adapter to the WAN interface[cite: 3].*
 
 <img src="assets/lan-assignment.png" alt="Manual LAN Assignment" width="600">
+<br>
 *Figure 4: Mapping the isolated virtual LAN segment to the internal interface[cite: 3].*
 
 </details>
@@ -64,12 +66,15 @@ Documents the service integration between pfSense and Windows Server, establishi
 
 **Implementation Evidence:**
 <img src="assets/static-lan-setup.png" alt="Web Wizard Setup" width="600">
+<br>
 *Figure 5: The initial Web Wizard LAN configuration[cite: 3].*
 
 <img src="assets/dns-domain-config.png" alt="DNS Domain Setup" width="600">
+<br>
 *Figure 6: Domain configuration and host identification (`singh.com`)[cite: 3].*
 
 <img src="assets/dhcp-options.png" alt="DHCP Option 003 Verification" width="600">
+<br>
 *Figure 7: DHCP scope audit confirming valid gateway and DNS options[cite: 3].*
 
 </details>
@@ -86,11 +91,13 @@ Final verification proves the integrity of the network stack, confirming that in
 
 **Implementation Evidence:**
 <img src="assets/system dashboard1.png" alt="pfSense Dashboard Status" width="600">
-
+<br>
 <img src="assets/system-dashboard2.png" alt="pfSense Dashboard Status" width="600">
+<br>
 *Figure 8: Web dashboard confirming healthy WAN and LAN interfaces[cite: 2, 3].*
 
 <img src="assets/ping-test1.png" alt="Connectivity Test Verification" width="600">
+<br>
 *Figure 9: Successful ping tests to 8.8.8.8 from the internal Windows 11 client[cite: 3].*
 
 </details>
