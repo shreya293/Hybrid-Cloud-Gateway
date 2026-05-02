@@ -23,7 +23,7 @@ The deployment begins with provisioning the pfSense kernel on the hypervisor. Th
 * **Hypervisor Handshake**: The system successfully detected the **VMware Virtual Machine** environment, allowing for optimized driver performance.
 
 **Implementation Evidence:**
-<img src="../assets/pfsense-version.png" alt="pfSense Version Selection" width="600">
+<img src="assets/pfsense-version.png" alt="pfSense Version Selection" width="600">
 <img src="assets/pfsense-version.png" alt="Ping Test Verification" width="600">
 
 *Figure 1: Selection of the current stable software branch.*
