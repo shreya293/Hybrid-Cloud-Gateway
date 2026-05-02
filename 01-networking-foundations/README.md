@@ -106,6 +106,26 @@ Final verification proves the integrity of the network stack, confirming that in
 
 </details>
 
+<details>
+<summary><b>Module 5: Connectivity Audit & System Validation (Client-Side)</b></summary>
+
+The final validation stage proves the integrity of the hybrid-cloud foundation by verifying end-to-end traffic transit from the perspective of the workstation.
+
+**Technical Highlights:**
+*   **Client Handshake**: Verified that the Windows 11 endpoint successfully acquired an IP from the Windows Server while identifying the pfSense gateway.
+*   **DNS Suffix Verification**: Confirmed the client correctly identifies as a member of the `singh.com` network identity.
+*   **WAN Transit Proof**: Successful ICMP echo request (ping) to `8.8.8.8` with 0% packet loss, confirming the functional internet bridge.
+
+**Implementation Evidence:**
+<img src="../assets/client-ipconfig.png" alt="Windows 11 Ipconfig Audit" width="600">
+<br>
+*Figure 8: Client-side verification of correct IP assignment and Gateway discovery.*
+
+<img src="../assets/ping-test.png" alt="Successful Internet Ping" width="600">
+<br>
+*Figure 9: The 'Victory Screen'—confirmed end-to-end internet connectivity via the secure gateway.*
+
+</details>
 ---
 
 ## 💡 Engineering Resolution
