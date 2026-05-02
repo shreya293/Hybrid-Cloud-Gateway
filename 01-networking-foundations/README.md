@@ -24,7 +24,7 @@ The deployment begins with provisioning the pfSense kernel on the hypervisor. Th
 
 **Implementation Evidence:**
 ![Software Version Selection](../assets/pfsense-version.png)
-<img src="assests/pfsense-version.png" alt="Ping Test Verification" width="600">
+<img src="assets/pfsense-version.png" alt="Ping Test Verification" width="600">
 
 *Figure 1: Selection of the current stable software branch.*
 
