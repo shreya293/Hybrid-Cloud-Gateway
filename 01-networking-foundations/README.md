@@ -40,6 +40,7 @@ This module documents the "Blue Screen" manual configuration where the physical 
 * **WAN Mapping (`le0`)**: Manually assigned to the external virtual adapter for internet transit[cite: 2].
 * **LAN Mapping (`le1`)**: Mapped to the private LAN segment to isolate enterprise traffic[cite: 2].
 * **Static Gateway**: Assigned `192.168.10.254` as the persistent internal exit point[cite: 2].
+* **Console Sovereignty**: Established the primary management menu, allowing for low-level system recovery and IP auditing without a GUI[cite: 2].
 
 **Implementation Evidence:**
 ![WAN Assignment](../assets/wan-assignment.png)
@@ -47,6 +48,9 @@ This module documents the "Blue Screen" manual configuration where the physical 
 
 ![LAN Assignment](../assets/lan-assignment.png)
 *Figure 4: Manual provisioning of the internal LAN interface.*
+
+![Console Home Menu](../assets/pfsense-console-menu.png)
+*Figure 4: The master console menu showing the final verified IP schema (192.168.10.254).*
 
 </details>
 
