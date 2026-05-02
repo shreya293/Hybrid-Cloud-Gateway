@@ -1,85 +1,94 @@
 # Phase 1: Networking Foundations & Enterprise Integration
 
-This phase marks the successful establishment of the core infrastructure. The primary goal was to bridge an internal Active Directory environment with a secure pfSense gateway to allow controlled external traffic transit.
+This phase documents the successful establishment of the core infrastructure. The primary goal was to bridge an internal Active Directory environment with a secure pfSense gateway to allow controlled external traffic transit.
 
 ## 🏗️ Virtual Network Architecture
 The environment is hosted on **VMware Workstation Pro** using custom **LAN Segments** to isolate laboratory traffic from the host machine.
 
-*   **Gateway (pfSense)**: Managed via a dual-homed configuration (WAN/LAN).
-*   **Directory Services (Windows Server 2022)**: Hosting the `singh.com` forest and enterprise DHCP/DNS.
-*   **Endpoint (Windows 11)**: A domain-joined workstation utilizing dynamic addressing.
+* **Gateway (pfSense)**: Managed via a dual-homed configuration (WAN/LAN).
+* **Directory Services (Windows Server 2022)**: Hosting the `singh.com` forest and enterprise DHCP/DNS.
+* **Endpoint (Windows 11)**: A domain-joined workstation acting as the primary internal node.
 
 ---
 
-## 🛠️ Technical Deep-Dive (Configuration receipts)
-*Click the toggles below to explore the specific configurations implemented in this phase.*
+## 🛠️ Technical Deep-Dive (Configuration Receipts)
+*Click the toggles below to explore the specific configurations and manual audits performed in this phase.*
 
 <details>
-<summary><b>0. Initial Console Provisioning (Low-Level Setup)</b></summary>
+<summary><b>1. Initial Console Provisioning & Version Selection</b></summary>
 
-Before accessing the Web GUI, the firewall was manually provisioned via the pfSense console to ensure correct interface mapping within the VMware environment.
+The gateway deployment began with the selection of the **Current Stable Version (2.8.1)** of pfSense CE to ensure a secure foundation for the hybrid cloud gateway.
 
-**Key Console Actions:**
-*   **Interface Assignment**: Validated the `em0` (WAN) and `em1` (LAN) drivers.
-*   **Static IP Definition**: Manages the LAN at `192.168.10.254` to act as a stable gateway for the Windows Server.
-
-**Console Audit:**
-![pfSense Console Summary](../assets/pfsense-console-main.png)
-*Figure: The pfSense console menu showing the final verified IP schema for the gateway.*
-</details>
-
-<details>
-<summary><b>1. Gateway Deployment & WAN/LAN Handshake</b></summary>
-
-### Interface Strategy
-The gateway was deployed using the **AMD64 ISO** specifically optimized for virtual machines. This ensures high-performance packet processing within the VMware environment.
-
-*   **WAN Interface**: Receives an external IP via VMware's NAT service to facilitate internet reachability.
-*   **LAN Interface**: Assigned a static internal address of `192.168.10.254`.
+**Manual Provisioning Steps:**
+* **Version Audit**: Selected the AMD64 ISO specifically optimized for virtualized environments.
+* **Environment Detection**: Verified successful detection of the **VMware Virtual Machine** platform to ensure driver compatibility.
 
 **Implementation Evidence:**
-![pfSense Installation Image](../assets/pfsense-iso-selection.png)
-*Figure 1: Selection of the AMD64 ISO optimized for virtual environments.*
+![pfSense Version Selection](../assets/pfsense-version-select.png)  
+*Figure 1: Selection of the 2.8.1-RELEASE for the project foundation.*
 
-![pfSense Dashboard Status](../assets/pfsense-dashboard-verified.png)
-*Figure 2: The master dashboard showing the 'Up' status for both WAN and LAN interfaces.*
-
-</details>
-
-<details>
-<summary><b>2. Enterprise DHCP & Scope Option 003</b></summary>
-
-### The Routing Bridge
-To maintain a centralized enterprise environment, DHCP is managed by **Windows Server 2022** rather than the firewall. 
-
-**The Challenge:** Initially, internal clients could receive IP addresses but were unable to reach the internet because they lacked a "Default Gateway" instruction.
-
-**The Resolution:** I configured **DHCP Scope Option 003 (Router)**. This critical instruction tells every device in the `singh.com` domain to use `192.168.10.254` (pfSense) as their exit door.
-
-**Configuration Proof:**
-![DHCP Scope Options](../assets/dhcp-scope-options.png)
-*Figure 3: Windows DHCP Manager confirming the active '003 Router' configuration.*
+![Environment Detection](../assets/pfsense-vmware-detect.png)  
+*Figure 2: System confirmation of the VMware virtualized environment.*
 
 </details>
 
 <details>
-<summary><b>3. Client-Side Authentication & Connectivity Validation</b></summary>
+<summary><b>2. Manual Interface Handshake (WAN/LAN Assignment)</b></summary>
 
-### Final System Audit
-A "Clean State" audit was performed on the Windows 11 workstation. By switching the adapter to **Automatic (DHCP)**, the client successfully inherited its identity and routing instructions from the server.
+A critical security step involved the manual assignment of physical interfaces to virtual network segments to prevent traffic "leakage" between the internal lab and the external host network.
+
+**Configuration Audit:**
+* **WAN Interface (le0)**: Manually mapped to the external-facing virtual adapter to receive a DHCP address via VMware NAT.
+* **LAN Interface (le1)**: Mapped to the internal LAN segment to serve as the private gateway[cite: 2].
+
+**Interface Mapping Proof:**
+![WAN Assignment](../assets/pfsense-wan-assign.png)  
+*Figure 3: Manual selection of the 'le0' interface for external WAN connectivity.*
+
+![LAN Assignment](../assets/pfsense-lan-assign.png)  
+*Figure 4: Manual selection of the 'le1' interface for the internal lab network.*
+
+</details>
+
+<details>
+<summary><b>3. Gateway IP Logic & Enterprise DHCP</b></summary>
+
+To maintain a centralized enterprise environment, **Windows Server 2022** manages DHCP, while pfSense acts as the dedicated gateway[cite: 2].
+
+**The Routing Bridge:**
+I manually assigned a static LAN IP of **192.168.10.254** to the pfSense gateway[cite: 2]. In the Windows DHCP Manager, I configured **Scope Option 003 (Router)** to point to this exact address, ensuring all clients automatically discover their exit path[cite: 2].
+
+**Implementation Proof:**
+![Static LAN Configuration](../assets/pfsense-static-lan.png)  
+*Figure 5: Manual assignment of the 192.168.10.254 gateway IP address.*
+
+![DHCP Scope Options](../assets/dhcp-scope-options.png)  
+*Figure 6: Windows DHCP Manager confirming the active '003 Router' configuration.*
+
+</details>
+
+<details>
+<summary><b>4. Final System Audit & Connectivity Validation</b></summary>
+
+Once the handshake between the Server and Gateway was complete, a final audit was performed on the Windows 11 workstation.
 
 **Verification Metrics:**
-*   **Domain Identification**: Client correctly identifies the `singh.com` network.
-*   **Gateway Acquisition**: `ipconfig` confirms `192.168.10.254` as the Default Gateway.
-*   **Stress Test**: Successful ICMP echo request (ping) to `8.8.8.8` with 0% packet loss.
+* **System Integrity**: Web dashboard confirms the system is on the latest version with active Netgate services[cite: 2].
+* **Gateway Acquisition**: Client `ipconfig` results confirm the workstation is successfully pointed to the pfSense gateway[cite: 2].
+* **Transit Proof**: Successful ping to `8.8.8.8` with 0% packet loss confirms the hybrid bridge is fully operational[cite: 2].
 
-**Connectivity Proof:**
-![Windows Client Success](../assets/client-connectivity-test.png)
-*Figure 4: The 'Victory Screen'—confirmed IP lease and successful internet transit.*
+**Connectivity Victory:**
+![pfSense Dashboard](../assets/pfsense-dashboard.png)  
+*Figure 7: Final web dashboard showing healthy WAN/LAN interfaces and system version.*
+
+![Connectivity Test](../assets/client-connectivity-test.png)  
+*Figure 8: Successful end-to-end internet transit from the internal domain client.*
 
 </details>
 
 ---
 
 ## 💡 Engineering Insights
-This phase proved that a Hybrid Gateway is more than just a firewall; it is a collaborative effort between **Directory Services** and **Network Routing**. By offloading DHCP to the Windows Server but keeping the Gateway on pfSense, we have created a professional environment that is ready for Phase 2: Security & Traffic Filtering.
+This phase proved that a secure network is not "auto-installed"—it is manually architected[cite: 2]. By documenting the **Interface Assignments** and **Static IP definitions**, this project demonstrates the ability to manage low-level network architecture before moving to high-level cloud synchronization[cite: 2].
+
+#Cybersecurity #NetworkEngineering #pfSense #ActiveDirectory #HomeLab #WorldSkills2028
