@@ -24,7 +24,7 @@ The gateway deployment began with the selection of the **Current Stable Version 
 * **Environment Detection**: Verified successful detection of the **VMware Virtual Machine** platform to ensure driver compatibility.
 
 **Implementation Evidence:**
-![pfSense Version Selection](../assets/pfsense-version-select.png)  
+![pfSense Version Selection](01-networking-foundations/assests/pfsense-version-select.png)  
 *Figure 1: Selection of the 2.8.1-RELEASE for the project foundation.*
 
 ![Environment Detection](../assets/pfsense-vmware-detect.png)  
