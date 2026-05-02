@@ -23,6 +23,7 @@ This stage focuses on selecting the correct stable build and ensuring the pfSens
 *   **Hypervisor Handshake**: System confirmed successful detection of the **VMware Virtual Machine** environment[cite: 2].
 
 **Implementation Evidence:**
+<br>
 <img src="assets/pfsense-version.png" alt="pfSense Version Selection" width="600">
 <br>
 *Figure 1: Selection of the 2.8.1 stable software branch[cite: 3].*
@@ -44,6 +45,7 @@ Documents the low-level console provisioning where physical interfaces are manua
 *   **Static Internal IP**: Defined `192.168.10.254` as the persistent internal exit point[cite: 2].
 
 **Implementation Evidence:**
+<br>
 <img src="assets/wan-assignment.png" alt="Manual WAN Assignment" width="600">
 <br>
 *Figure 3: Mapping the untrusted virtual adapter to the WAN interface[cite: 3].*
@@ -65,6 +67,7 @@ Documents the service integration between pfSense and Windows Server, establishi
 *   **DNS Resolution**: Internal domain validation for `singh.com`[cite: 2].
 
 **Implementation Evidence:**
+<br>
 <img src="assets/static-lan-setup.png" alt="Web Wizard Setup" width="600">
 <br>
 *Figure 5: The initial Web Wizard LAN configuration[cite: 3].*
@@ -90,12 +93,13 @@ Final verification proves the integrity of the network stack, confirming that in
 *   **Transit Proof**: Successful ICMP echo requests (pings) from internal client to public DNS (`8.8.8.8`)[cite: 2].
 
 **Implementation Evidence:**
+<br>
 <img src="assets/system dashboard1.png" alt="pfSense Dashboard Status" width="600">
 <br>
 <img src="assets/system-dashboard2.png" alt="pfSense Dashboard Status" width="600">
 <br>
 *Figure 8: Web dashboard confirming healthy WAN and LAN interfaces[cite: 2, 3].*
-
+<br>
 <img src="assets/ping-test1.png" alt="Connectivity Test Verification" width="600">
 <br>
 *Figure 9: Successful ping tests to 8.8.8.8 from the internal Windows 11 client[cite: 3].*
