@@ -111,4 +111,4 @@ Final verification proves the integrity of the network stack, confirming that in
 ## 💡 Engineering Resolution
 By manually architecting the **Interface Mappings** and correctly configuring the **DHCP Scope Options**, I created a collaborative environment between Directory Services and Network Security[cite: 2]. This robust foundation is now ready for **Phase 2: UTM Security Implementation**.
 
-#Cybersecurity #NetworkEngineering #pfSense #ActiveDirectory #HomeLab #WorldSkills2028
+#Cybersecurity #NetworkEngineering #pfSense #ActiveDirectory #HomeLab 
