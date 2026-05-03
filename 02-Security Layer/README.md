@@ -4,7 +4,7 @@ This phase focuses on hardening the internal network by implementing **Stateful 
 
 ---
 <details>
-<summary><b> ## 🛠️ Module 1: Management Plane Isolation </b></summary>
+<summary><b> Module 1: Management Plane Isolation </b></summary>
 The primary goal of this module is to enforce the **Principle of Least Privilege**. By default, any device on the LAN can access the firewall management interface. We have restricted this access exclusively to the **Windows Server 2022 (Administrative Workstation)**.
 
 ### **1. Initial Access & Authentication**
@@ -21,7 +21,10 @@ Accessing the pfSense WebGUI from the administrative server for initial configur
 
 ---
 </details>
-### **2. Troubleshooting the "Anti-Lockout" Barrier**
+
+<details>
+
+<summary><b> 2.Troubleshooting the "Anti-Lockout" Barrier**</b> </summary>
 During implementation, a common architectural hurdle was encountered: the built-in **Anti-Lockout Rule**. This rule sits at the top of the stack and prevents custom block rules from taking effect.
 
 > [!NOTE]
@@ -38,6 +41,7 @@ During implementation, a common architectural hurdle was encountered: the built-
 *Figure 1 2: This is where we try move our custome rules above the pfsense rules
 <br>
 ---
+</details>
 
 ### **3. Implementing the Security Policy**
 With the hierarchy unlocked, a broad block rule was implemented to ensure total isolation for the standard user machine.
