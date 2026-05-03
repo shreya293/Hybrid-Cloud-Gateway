@@ -24,7 +24,7 @@ Accessing the pfSense WebGUI from the administrative server for initial configur
 
 <details>
 
-<summary><b> 2.Troubleshooting the "Anti-Lockout" Barrier**</b> </summary>
+<summary><b> 2.Troubleshooting the "Anti-Lockout" Barrier</b> </summary>
 During implementation, a common architectural hurdle was encountered: the built-in **Anti-Lockout Rule**. This rule sits at the top of the stack and prevents custom block rules from taking effect.
 
 > [!NOTE]
@@ -38,12 +38,14 @@ During implementation, a common architectural hurdle was encountered: the built-
 <img src="assets/troubleshoot1.png" alt="Dealing with Anti-lockout rule" width="600">
 <br>
 <img src="assets/troubleshoot2.jpeg" alt="Dealing with Anti-lockout rule" width="600">
+<br>
 *Figure 1 2: This is where we try move our custome rules above the pfsense rules
 <br>
----
+
 </details>
 
-### **3. Implementing the Security Policy**
+<details>
+<summary><b> 3. Implementing the Security Policy </b></summary>
 With the hierarchy unlocked, a broad block rule was implemented to ensure total isolation for the standard user machine.
 
 **Rule Configuration:**
@@ -63,9 +65,10 @@ With the hierarchy unlocked, a broad block rule was implemented to ensure total 
 <br>
 *Figure 1 2 3 4: Configuring the specific block rule for the Windows 11 workstation.*
 
----
+</details>
 
-### **4. Final Validation & Connectivity Audit**
+<details>
+<summary> <b>4. Final Validation & Connectivity Audit </b> </summary>
 The final stage confirms that the firewall is "intelligent"—blocking management access while permitting standard internet traffic.
 
 **Verification Results:**
@@ -76,7 +79,8 @@ The final stage confirms that the firewall is "intelligent"—blocking managemen
 <img src="assets/final-ping-test.jpeg" alt="Successful Internet Ping and Blocked Gateway" width="600">
 <br>
 *Figure 3: Final proof of concept: Internet access is active, but the internal gateway is invisible to the client .*
----
+
+</details>
 
 ### **Technical Skills Demonstrated:**
 *   **Stateful Packet Inspection (SPI)**: Understanding how firewall states affect rule application.
